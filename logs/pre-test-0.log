@@ -1,0 +1,97 @@
+2023-07-28 10:05:15,589 - initialize - INFO - Initializing seed to 48763 successfully.
+2023-07-28 10:05:15,618 - initialize - INFO - Initializing device to cuda successfully.
+2023-07-28 10:05:15,627 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2023-07-28 10:05:15,933 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-07-28 10:05:17,041 - initialize - INFO - Initializing model to BertWithNN successfully.
+2023-07-28 10:05:19,100 - initialize - INFO - Initializing optimizer to Adam successfully.
+2023-07-28 10:05:19,104 - initialize - INFO - Initializing scheduler to ReduceLROnPlateau successfully.
+2023-07-28 10:05:28,324 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-28 10:05:28,332 - filelock - DEBUG - Attempting to acquire lock 139781112028064 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-28 10:05:28,338 - filelock - DEBUG - Lock 139781112028064 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-28 10:05:28,566 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 231508
+2023-07-28 10:05:28,784 - filelock - DEBUG - Attempting to release lock 139781112028064 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-28 10:05:28,788 - filelock - DEBUG - Lock 139781112028064 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-28 10:05:29,019 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2023-07-28 10:05:29,250 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/special_tokens_map.json HTTP/1.1" 404 0
+2023-07-28 10:05:29,481 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2023-07-28 10:05:29,486 - filelock - DEBUG - Attempting to acquire lock 139781112028064 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-28 10:05:29,488 - filelock - DEBUG - Lock 139781112028064 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-28 10:05:29,732 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 28
+2023-07-28 10:05:29,758 - filelock - DEBUG - Attempting to release lock 139781112028064 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-28 10:05:29,764 - filelock - DEBUG - Lock 139781112028064 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-28 10:05:29,822 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-28 10:05:29,826 - initialize - INFO - Initializing train dataloader successfully.
+2023-07-28 10:05:32,074 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-28 10:05:32,106 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-28 10:05:32,113 - initialize - INFO - Initializing validation dataloader successfully.
+2023-07-28 10:05:33,429 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-28 10:05:33,462 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-28 10:05:33,467 - initialize - INFO - Initializing test dataloader successfully.
+2023-07-28 10:05:33,470 - initialize - INFO - Initialize all parameters successfully.
+2023-07-28 10:05:33,474 - initialize - INFO - Details of all parameters: 
+{'device': device(type='cuda'), 'model': BertWithNN(
+  (lm): Bert(
+    (bert): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+  )
+  (classifier): Classifier(
+    (classifier): Sequential(
+      (linear_0): Linear(in_features=768, out_features=384, bias=True)
+      (linear_1): Linear(in_features=384, out_features=192, bias=True)
+      (linear_2): Linear(in_features=192, out_features=4, bias=True)
+      (relu_2): ReLU()
+    )
+  )
+  (criterion): CrossEntropyLoss()
+), 'trained_epoch': -1, 'test_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7f2130360d00>, 'optimizer': Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 1e-05
+    maximize: False
+    weight_decay: 0
+), 'scheduler': <torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x7f213664bac0>, 'train_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7f2153875ba0>, 'validation_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7f21366f7100>}
