@@ -20,7 +20,7 @@ class AGNewsDataset(Dataset):
                 , 'label': data_df['Class Index'].iloc[i]
             }
 
-        self.data.append(one_data)
+            self.data.append(one_data)
 
 
     def __getitem__(self, index):

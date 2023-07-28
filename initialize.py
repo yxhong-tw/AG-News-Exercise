@@ -98,7 +98,7 @@ def initialize_formatter(config):
         raise ValueError(f'There is no formatter named {formatter_name}.')
 
     def collate_fn(data):
-        return formatter.process(data)
+        return formatter.format(data)
 
     logger.info(f'Initializing formatter to {formatter_name} successfully.')
 
@@ -114,7 +114,6 @@ def initialize_dataloader(config, task_name):
         batch_size = config['batch_size']
         shuffle = config['dataloader_shuffle']
         collate_fn = initialize_formatter(config=config)
-
         dataloader = DataLoader(
             dataset=dataset
             , batch_size=batch_size
@@ -131,8 +130,11 @@ def initialize_dataloader(config, task_name):
 
 
 def load_checkpoint(config, model, optimizer, scheduler, trained_epoch):
+    directory_path=f'{config["AGNews_path"]}/checkpoints/{config["version"]}'
+    file_name=f'{config["checkpoint_epoch"]}.pkl'
+
     try:
-        checkpoint_parameters = torch.load(f=config['load_checkpoint_path'])
+        checkpoint_parameters = torch.load(f=f'{directory_path}/{file_name}')
 
         model.load_state_dict(checkpoint_parameters['model'])
         optimizer.load_state_dict(checkpoint_parameters['optimizer'])

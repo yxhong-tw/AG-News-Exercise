@@ -1,5 +1,6 @@
 import logging
 import torch
+import os
 
 from tabulate import tabulate
 
@@ -35,7 +36,7 @@ def initialize_logger(config):
 def get_time_info_str(total_seconds):
     total_seconds = int(total_seconds)
     hours = (total_seconds // 60 // 60)
-    minutes = (total_seconds // 60)
+    minutes = (total_seconds // 60 % 60)
     seconds = (total_seconds % 60)
 
     return ('%2d:%02d:%02d' % (hours, minutes, seconds))
@@ -48,7 +49,7 @@ def log(
         , time
         , loss
         , lr
-        , mima_prf):
+        , other):
     header2item = {
         'epoch': epoch
         , 'stage': stage
@@ -66,33 +67,43 @@ def log(
             info_headers.append(header)
             info_table[0].append(header2item[header])
 
-    mima_prf_headers = [
-        'MiP', 'MiR', 'MiF'
-        , 'MaP', 'MaR', 'MaF'
-    ]
+    other_headers = None
+    other_table = None
 
-    mima_prf_table = [
-        [
-            mima_prf['mip']
-            , mima_prf['mir']
-            , mima_prf['mif']
-            , mima_prf['map']
-            , mima_prf['mar']
-            , mima_prf['maf']
+    if isinstance(other, dict):
+        other_headers = [
+            'MiP', 'MiR', 'MiF', 'MiE'
+            , 'MaP', 'MaR', 'MaF', 'MaE'
         ]
-    ]
+
+        other_table = [
+            [
+                other['mip']
+                , other['mir']
+                , other['mif']
+                , other['mie']
+                , other['map']
+                , other['mar']
+                , other['maf']
+                , other['mae']
+            ]
+        ]
+    else:
+        # isinstance(other, str) == True
+        other_headers = ['Other Message']
+        other_table = [[other]]
 
     log_str = (
         '\n'
-        , tabulate(
+        + tabulate(
             tabular_data=info_table
             , headers=info_headers
             , tablefmt='pretty'
         )
-        , '\n'
-        , tabulate(
-            tabular_data=mima_prf_table
-            , headers=mima_prf_headers
+        + '\n'
+        + tabulate(
+            tabular_data=other_table
+            , headers=other_headers
             , tablefmt='pretty'
         )
     )
@@ -105,16 +116,20 @@ def save_checkpoint(
         , optimizer
         , scheduler
         , trained_epoch
-        , file):
+        , directory_path
+        , file_name):
     save_params = {
-        'model': model
-        , 'optimizer': optimizer
-        , 'scheduler': scheduler
+        'model': model.state_dict()
+        , 'optimizer': optimizer.state_dict()
+        , 'scheduler': scheduler.state_dict()
         , 'trained_epoch': trained_epoch
     }
 
+    if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
+
     try:
-        torch.save(obj=save_params, f=file)
+        torch.save(obj=save_params, f=f'{directory_path}/{file_name}')
     except Exception:
-        logger.errr(f'Failed to save model with error {Exception}.')
+        logger.error(f'Failed to save model with error {Exception}.')
         raise Exception

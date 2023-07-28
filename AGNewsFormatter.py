@@ -29,8 +29,8 @@ class AGNewsFormatter:
             labels.append(label)
 
         return {
-            'text': torch.LongTensor(texts)
-            , 'label': torch.LongTensor(labels)
+            'text': torch.IntTensor(texts)
+            , 'label': torch.FloatTensor(labels)
         }
 
 
