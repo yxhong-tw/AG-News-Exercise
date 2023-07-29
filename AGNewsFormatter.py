@@ -4,9 +4,9 @@ from transformers import BertTokenizer
 
 
 class AGNewsFormatter:
-    def __init__(self, config):
+    def __init__(self, configs):
         self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-        self.max_sequence_len = config['max_sequence_len']
+        self.max_sequence_len = configs['max_sequence_len']
 
 
     def format(self, data):

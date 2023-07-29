@@ -8,8 +8,8 @@ from tabulate import tabulate
 logger = logging.getLogger(__name__)
 
 
-def initialize_logger(config):
-    AGNews_path = config['AGNews_path']
+def initialize_logger(configs):
+    AGNews_path = configs['AGNews_path']
     logger_formatter = logging.Formatter(
         '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
@@ -21,7 +21,7 @@ def initialize_logger(config):
     sh.setFormatter(logger_formatter)
 
     fh = logging.FileHandler(
-        filename=f'{AGNews_path}/logs/{config["version"]}.log'
+        filename=f'{AGNews_path}/logs/{configs["version"]}.log'
         , mode='a'
         , encoding='UTF-8')
     fh.setLevel(logging.DEBUG)

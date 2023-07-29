@@ -1,0 +1,387 @@
+2023-07-28 20:47:29,263 - initialize - INFO - Initializing seed to 48763 successfully.
+2023-07-28 20:47:29,321 - initialize - INFO - Initializing device to cuda successfully.
+2023-07-28 20:47:29,333 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2023-07-28 20:47:29,536 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-07-28 20:47:29,543 - filelock - DEBUG - Attempting to acquire lock 137144017516480 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2023-07-28 20:47:29,546 - filelock - DEBUG - Lock 137144017516480 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2023-07-28 20:47:29,647 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 570
+2023-07-28 20:47:29,668 - filelock - DEBUG - Attempting to release lock 137144017516480 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2023-07-28 20:47:29,673 - filelock - DEBUG - Lock 137144017516480 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2023-07-28 20:47:29,774 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/model.safetensors HTTP/1.1" 302 0
+2023-07-28 20:47:29,778 - filelock - DEBUG - Attempting to acquire lock 137144017790640 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2023-07-28 20:47:29,781 - filelock - DEBUG - Lock 137144017790640 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2023-07-28 20:47:29,788 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): cdn-lfs.huggingface.co:443
+2023-07-28 20:47:29,901 - urllib3.connectionpool - DEBUG - https://cdn-lfs.huggingface.co:443 "GET /bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1690829268&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY5MDgyOTI2OH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy5odWdnaW5nZmFjZS5jby9iZXJ0LWJhc2UtdW5jYXNlZC82OGQ0NWUyMzRlYjRhOTI4MDc0ZGZkODY4Y2VhZDAyMTlhYjg1MzU0Y2M1M2QyMGU3NzI3NTNjNmJiOTE2OWQzP3Jlc3BvbnNlLWNvbnRlbnQtZGlzcG9zaXRpb249KiJ9XX0_&Signature=G7cQ832sklHZUfJC9G1iKn~jN5v6o230Fv730ad3a4tFo8VvyEK7HLyam498c0xXZScmdQ29wFMfb1548dTHRTJkzfKzc4YO9TcdrgyGsnl9BNMU8886rDp7oGcQoWuCILAnJ~zL0LedvMiVFtrqw5nvREMgsWijjK1AWLZocEO20xLnlOqJxHGIwn~0oBlg9Dl-x5lecT1yfi4W5gatA~P9roIVPA9typLnPdsUqnfN-PUO7aL9rpm7uS70n1iJs5giXx4xtFj7UbLSRJtf9cy0wHbAFeOqqwqboIhMvzoBLbQkRY1XxnH0Siil1QN4k7HNTjYbunrJx-s5GEaOFw__&Key-Pair-Id=KVTP0A1DKRTAX HTTP/1.1" 200 440449768
+2023-07-28 20:47:31,246 - filelock - DEBUG - Attempting to release lock 137144017790640 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2023-07-28 20:47:31,250 - filelock - DEBUG - Lock 137144017790640 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2023-07-28 20:47:32,353 - initialize - INFO - Initializing model to BertWithNN successfully.
+2023-07-28 20:47:37,651 - initialize - INFO - Initializing optimizer to Adam successfully.
+2023-07-28 20:47:37,659 - initialize - INFO - Initializing scheduler to ReduceLROnPlateau successfully.
+2023-07-28 20:47:42,037 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-28 20:47:42,044 - filelock - DEBUG - Attempting to acquire lock 137144017796016 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-28 20:47:42,048 - filelock - DEBUG - Lock 137144017796016 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-28 20:47:42,150 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 231508
+2023-07-28 20:47:42,317 - filelock - DEBUG - Attempting to release lock 137144017796016 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-28 20:47:42,321 - filelock - DEBUG - Lock 137144017796016 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-28 20:47:42,426 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2023-07-28 20:47:42,531 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/special_tokens_map.json HTTP/1.1" 404 0
+2023-07-28 20:47:42,631 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2023-07-28 20:47:42,636 - filelock - DEBUG - Attempting to acquire lock 137144017796016 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-28 20:47:42,639 - filelock - DEBUG - Lock 137144017796016 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-28 20:47:42,745 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 28
+2023-07-28 20:47:42,773 - filelock - DEBUG - Attempting to release lock 137144017796016 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-28 20:47:42,776 - filelock - DEBUG - Lock 137144017796016 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-28 20:47:42,831 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-28 20:47:42,834 - initialize - INFO - Initializing train dataloader successfully.
+2023-07-28 20:47:44,516 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-28 20:47:44,554 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-28 20:47:44,563 - initialize - INFO - Initializing validation dataloader successfully.
+2023-07-28 20:47:45,242 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-28 20:47:45,274 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-28 20:47:45,280 - initialize - INFO - Initializing test dataloader successfully.
+2023-07-28 20:47:45,286 - initialize - INFO - Initialize all parameters successfully.
+2023-07-28 20:47:45,293 - initialize - INFO - Details of all parameters: 
+{'device': device(type='cuda'), 'model': BertWithNN(
+  (lm): Bert(
+    (bert): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+  )
+  (classifier): Classifier(
+    (classifier): Sequential(
+      (linear_0): Linear(in_features=768, out_features=384, bias=True)
+      (linear_1): Linear(in_features=384, out_features=192, bias=True)
+      (linear_2): Linear(in_features=192, out_features=4, bias=True)
+      (relu_2): ReLU()
+    )
+  )
+  (criterion): CrossEntropyLoss()
+), 'trained_epoch': -1, 'test_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7cbb4db93340>, 'optimizer': Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 1e-05
+    maximize: False
+    weight_decay: 0
+), 'scheduler': <torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x7cbb5476b910>, 'train_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7cbb54769b70>, 'validation_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7cbb4db93ac0>}
+2023-07-28 20:47:49,397 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   0   | train |   1/6750   | 0:00:04/7:40:37 | 1.4064965 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+-------+-------+-------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  |  MaE  |
++-------+-------+-------+------+-------+-------+-------+-------+
+| 0.188 | 0.079 | 0.111 | 0.75 | 0.122 | 0.119 | 0.087 | 0.438 |
++-------+-------+-------+------+-------+-------+-------+-------+
+
+2023-07-28 21:24:14,374 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   0   | train | 1501/6750  | 0:36:29/2:07:35 | 0.6363334 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+-------+-------+------+
+| 0.668 | 0.204 | 0.312 | 0.75 | 0.524 | 0.199 | 0.283 | 0.75 |
++-------+-------+-------+------+-------+-------+-------+------+
+
+2023-07-28 22:01:05,229 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   0   | train | 3001/6750  | 1:13:19/1:31:36 | 0.5327115 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+-------+-------+------+
+| 0.699 | 0.215 | 0.329 | 0.75 | 0.727 | 0.212 | 0.311 | 0.75 |
++-------+-------+-------+------+-------+-------+-------+------+
+
+2023-07-28 22:38:35,209 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   0   | train | 4501/6750  | 1:50:49/0:55:22 | 0.4211457 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+-------+-------+------+
+| 0.719 | 0.232 | 0.351 | 0.75 | 0.718 | 0.229 | 0.344 | 0.75 |
++-------+-------+-------+------+-------+-------+-------+------+
+
+2023-07-28 23:16:04,782 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   0   | train | 6001/6750  | 2:28:19/0:18:30 | 0.3637437 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  | MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+------+-------+------+
+| 0.716 | 0.241 | 0.361 | 0.75 | 0.717 | 0.24 | 0.358 | 0.75 |
++-------+-------+-------+------+-------+------+-------+------+
+
+2023-07-28 23:34:48,469 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   0   | train | 6750/6750  | 2:47:03/0:00:00 | 0.0214894 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+-------+-------+------+
+| 0.713 | 0.245 | 0.364 | 0.75 | 0.718 | 0.243 | 0.362 | 0.75 |
++-------+-------+-------+------+-------+-------+-------+------+
+
+2023-07-28 23:34:49,027 - utils - INFO - 
++-------+----------+------------+------------------+-----------+----+
+| epoch |  stage   | iterations |       time       |   loss    | lr |
++-------+----------+------------+------------------+-----------+----+
+|   0   | validate |   1/750    | 0:00:00/0:06:47 | 0.1847533 |    |
++-------+----------+------------+------------------+-----------+----+
++-------+-------+-------+------+-------+-------+-------+-------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  |  MaE  |
++-------+-------+-------+------+-------+-------+-------+-------+
+| 0.667 | 0.255 | 0.368 | 0.75 | 0.792 | 0.259 | 0.354 | 0.359 |
++-------+-------+-------+------+-------+-------+-------+-------+
+
+2023-07-28 23:41:29,857 - utils - INFO - 
++-------+----------+------------+------------------+-----------+----+
+| epoch |  stage   | iterations |       time       |   loss    | lr |
++-------+----------+------------+------------------+-----------+----+
+|   0   | validate |  750/750   | 0:06:41/0:00:00 | 0.0107537 |    |
++-------+----------+------------+------------------+-----------+----+
++-------+-------+-------+------+-------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+-------+-------+------+
+| 0.701 | 0.271 | 0.391 | 0.75 | 0.766 | 0.276 | 0.391 | 0.75 |
++-------+-------+-------+------+-------+-------+-------+------+
+
+2023-07-28 23:41:39,778 - utils - INFO - 
++-------+-------+------------+------------------+-----------+----+
+| epoch | stage | iterations |       time       |   loss    | lr |
++-------+-------+------------+------------------+-----------+----+
+|   0   | test  |   1/475    | 0:00:00/0:04:22 | 0.2777832 |    |
++-------+-------+------------+------------------+-----------+----+
++-------+-------+-------+------+-------+-------+-------+-------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  |  MaE  |
++-------+-------+-------+------+-------+-------+-------+-------+
+| 0.667 | 0.255 | 0.368 | 0.75 | 0.713 | 0.257 | 0.344 | 0.359 |
++-------+-------+-------+------+-------+-------+-------+-------+
+
+2023-07-28 23:45:53,598 - utils - INFO - 
++-------+-------+------------+------------------+-----------+----+
+| epoch | stage | iterations |       time       |   loss    | lr |
++-------+-------+------------+------------------+-----------+----+
+|   0   | test  |  475/475   | 0:04:14/0:00:00 | 0.0112751 |    |
++-------+-------+------------+------------------+-----------+----+
++-------+-------+-------+------+------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  | MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+------+-------+-------+------+
+| 0.694 | 0.272 | 0.391 | 0.75 | 0.76 | 0.277 | 0.391 | 0.75 |
++-------+-------+-------+------+------+-------+-------+------+
+
+2023-07-29 03:18:48,330 - initialize - INFO - Initializing seed to 48763 successfully.
+2023-07-29 03:18:48,584 - initialize - INFO - Initializing device to cuda successfully.
+2023-07-29 03:18:48,598 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2023-07-29 03:18:48,786 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-07-29 03:18:48,791 - filelock - DEBUG - Attempting to acquire lock 134595863547040 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2023-07-29 03:18:48,797 - filelock - DEBUG - Lock 134595863547040 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2023-07-29 03:18:48,852 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 570
+2023-07-29 03:18:48,900 - filelock - DEBUG - Attempting to release lock 134595863547040 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2023-07-29 03:18:48,905 - filelock - DEBUG - Lock 134595863547040 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/45a2321a7ecfdaaf60a6c1fd7f5463994cc8907d.lock
+2023-07-29 03:18:48,957 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/model.safetensors HTTP/1.1" 302 0
+2023-07-29 03:18:48,964 - filelock - DEBUG - Attempting to acquire lock 134595865263696 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2023-07-29 03:18:48,970 - filelock - DEBUG - Lock 134595865263696 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2023-07-29 03:18:48,982 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): cdn-lfs.huggingface.co:443
+2023-07-29 03:18:49,132 - urllib3.connectionpool - DEBUG - https://cdn-lfs.huggingface.co:443 "GET /bert-base-uncased/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1690856026&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY5MDg1NjAyNn19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy5odWdnaW5nZmFjZS5jby9iZXJ0LWJhc2UtdW5jYXNlZC82OGQ0NWUyMzRlYjRhOTI4MDc0ZGZkODY4Y2VhZDAyMTlhYjg1MzU0Y2M1M2QyMGU3NzI3NTNjNmJiOTE2OWQzP3Jlc3BvbnNlLWNvbnRlbnQtZGlzcG9zaXRpb249KiJ9XX0_&Signature=p~f-PCS8-jruBIcTjfuxX6rlQ-iXBz~IPc3of1yf67PdfhGikWVViAe9R3wOgGdUCM1adGnPQR8adr4L38gmUESwAvVVH1QoObBDUHEoDjRST6MD91sUY7sa80tpO~X7AhA9fXTGYubTlmDtpopm7qRur~58W3veIXfS14zPe~A6unY0l0F7HJvsHHlG39tdsL0UB1tL-3qE5B9T5YjAbLCxIx-6ja7eVG4o5hU8SnXVltLO4CNJ3O1MQk496b1KKSjU2ci7l9igCxjSei6fRJSQcqE0kjpG5XbT98F6afXYuwJNZALgO-jyub9DfONsVLjSmk7uEIReEdzewJEHEg__&Key-Pair-Id=KVTP0A1DKRTAX HTTP/1.1" 200 440449768
+2023-07-29 03:18:51,426 - filelock - DEBUG - Attempting to release lock 134595865263696 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2023-07-29 03:18:51,434 - filelock - DEBUG - Lock 134595865263696 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3.lock
+2023-07-29 03:18:52,666 - initialize - INFO - Initializing model to BertWithNN successfully.
+2023-07-29 03:18:59,329 - initialize - INFO - Initializing optimizer to Adam successfully.
+2023-07-29 03:18:59,338 - initialize - INFO - Initializing scheduler to ReduceLROnPlateau successfully.
+2023-07-29 03:19:03,600 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 03:19:03,606 - filelock - DEBUG - Attempting to acquire lock 134595863558704 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-29 03:19:03,611 - filelock - DEBUG - Lock 134595863558704 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-29 03:19:03,665 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 231508
+2023-07-29 03:19:03,728 - filelock - DEBUG - Attempting to release lock 134595863558704 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-29 03:19:03,732 - filelock - DEBUG - Lock 134595863558704 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938.lock
+2023-07-29 03:19:03,783 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2023-07-29 03:19:03,834 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/special_tokens_map.json HTTP/1.1" 404 0
+2023-07-29 03:19:03,886 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2023-07-29 03:19:03,891 - filelock - DEBUG - Attempting to acquire lock 134595863552368 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-29 03:19:03,896 - filelock - DEBUG - Lock 134595863552368 acquired on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-29 03:19:03,945 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 28
+2023-07-29 03:19:03,984 - filelock - DEBUG - Attempting to release lock 134595863552368 on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-29 03:19:03,991 - filelock - DEBUG - Lock 134595863552368 released on /root/.cache/huggingface/hub/models--bert-base-uncased/blobs/a661b1a138dac6dc5590367402d100765010ffd6.lock
+2023-07-29 03:19:04,059 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 03:19:04,068 - initialize - INFO - Initializing train dataloader successfully.
+2023-07-29 03:19:04,881 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 03:19:04,920 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 03:19:04,927 - initialize - INFO - Initializing validation dataloader successfully.
+2023-07-29 03:19:19,537 - initialize - INFO - Load checkpoint from checkpoint path successfully.
+2023-07-29 03:19:20,161 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 03:19:20,201 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 03:19:20,211 - initialize - INFO - Initializing test dataloader successfully.
+2023-07-29 03:19:20,218 - initialize - INFO - Initialize all parameters successfully.
+2023-07-29 03:19:20,223 - initialize - INFO - Details of all parameters: 
+{'device': device(type='cuda'), 'model': BertWithNN(
+  (lm): Bert(
+    (bert): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+  )
+  (classifier): Classifier(
+    (classifier): Sequential(
+      (linear_0): Linear(in_features=768, out_features=384, bias=True)
+      (linear_1): Linear(in_features=384, out_features=192, bias=True)
+      (linear_2): Linear(in_features=192, out_features=4, bias=True)
+      (relu_2): ReLU()
+    )
+  )
+  (criterion): CrossEntropyLoss()
+), 'trained_epoch': 0, 'test_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7a69bbea84c0>, 'optimizer': Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 1e-05
+    maximize: False
+    weight_decay: 0
+), 'scheduler': <torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x7a6a0aa2b730>, 'train_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7a6a0aab2590>, 'validation_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x7a6a0aa2a0e0>}
+2023-07-29 03:19:24,957 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   1   | train |   1/6750   | 0:00:04/8:51:03 | 0.0526816 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-----+-------+-----+------+-------+-------+-------+-------+
+| MiP |  MiR  | MiF | MiE  |  MaP  |  MaR  |  MaF  |  MaE  |
++-----+-------+-----+------+-------+-------+-------+-------+
+| 0.8 | 0.267 | 0.4 | 0.75 | 0.792 | 0.263 | 0.378 | 0.406 |
++-----+-------+-----+------+-------+-------+-------+-------+
+
+2023-07-29 03:59:52,002 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   1   | train | 1501/6750  | 0:40:31/2:21:43 | 0.1535596 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+-------+-------+------+
+| 0.732 | 0.267 | 0.392 | 0.75 | 0.787 | 0.271 | 0.392 | 0.75 |
++-------+-------+-------+------+-------+-------+-------+------+
+
+2023-07-29 04:40:28,287 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   1   | train | 3001/6750  | 1:21:08/1:41:21 | 0.1401674 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+-------+-------+------+
+| 0.746 | 0.266 | 0.392 | 0.75 | 0.797 | 0.269 | 0.392 | 0.75 |
++-------+-------+-------+------+-------+-------+-------+------+
+
+2023-07-29 05:21:03,796 - utils - INFO - 
++-------+-------+------------+------------------+-----------+-------+
+| epoch | stage | iterations |       time       |   loss    |  lr   |
++-------+-------+------------+------------------+-----------+-------+
+|   1   | train | 4501/6750  | 2:01:43/1:00:49 | 0.1273348 | 1e-05 |
++-------+-------+------------+------------------+-----------+-------+
++-------+-------+-------+------+-------+-------+-------+------+
+|  MiP  |  MiR  |  MiF  | MiE  |  MaP  |  MaR  |  MaF  | MaE  |
++-------+-------+-------+------+-------+-------+-------+------+
+| 0.752 | 0.266 | 0.393 | 0.75 | 0.799 | 0.269 | 0.393 | 0.75 |
++-------+-------+-------+------+-------+-------+-------+------+
+

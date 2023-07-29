@@ -1,21 +1,21 @@
-2023-07-29 04:25:29,654 - initialize - INFO - Initializing seed to 48763 successfully.
-2023-07-29 04:25:30,503 - initialize - INFO - Initializing device to cuda successfully.
-2023-07-29 04:25:30,518 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
-2023-07-29 04:25:31,333 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
-2023-07-29 04:25:32,520 - initialize - INFO - Initializing model to BertWithNN successfully.
-2023-07-29 04:25:32,981 - initialize - INFO - Initializing optimizer to Adam successfully.
-2023-07-29 04:25:32,981 - initialize - INFO - Initializing scheduler to ReduceLROnPlateau successfully.
-2023-07-29 04:25:33,287 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
-2023-07-29 04:25:33,381 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
-2023-07-29 04:25:33,383 - initialize - INFO - Initializing train dataloader successfully.
-2023-07-29 04:25:33,695 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
-2023-07-29 04:25:33,742 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
-2023-07-29 04:25:33,744 - initialize - INFO - Initializing validation dataloader successfully.
-2023-07-29 04:25:34,042 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
-2023-07-29 04:25:34,091 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
-2023-07-29 04:25:34,092 - initialize - INFO - Initializing test dataloader successfully.
-2023-07-29 04:25:34,092 - initialize - INFO - Initialize all parameters successfully.
-2023-07-29 04:25:34,098 - initialize - INFO - Details of all parameters: 
+2023-07-29 15:14:37,747 - initialize - INFO - Initializing seed to 48763 successfully.
+2023-07-29 15:14:38,585 - initialize - INFO - Initializing device to cuda successfully.
+2023-07-29 15:14:38,600 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2023-07-29 15:14:39,396 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-07-29 15:14:41,121 - initialize - INFO - Initializing model to BertWithNN successfully.
+2023-07-29 15:14:41,912 - initialize - INFO - Initializing optimizer to Adam successfully.
+2023-07-29 15:14:41,913 - initialize - INFO - Initializing scheduler to ReduceLROnPlateau successfully.
+2023-07-29 15:14:42,289 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 15:14:42,388 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 15:14:42,389 - initialize - INFO - Initializing train dataloader successfully.
+2023-07-29 15:14:42,721 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 15:14:42,820 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 15:14:42,821 - initialize - INFO - Initializing validation dataloader successfully.
+2023-07-29 15:14:43,165 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 15:14:43,266 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 15:14:43,267 - initialize - INFO - Initializing test dataloader successfully.
+2023-07-29 15:14:43,268 - initialize - INFO - Initialize all parameters successfully.
+2023-07-29 15:14:43,278 - initialize - INFO - Details of all parameters: 
 {'device': device(type='cuda'), 'model': BertWithNN(
   (lm): Bert(
     (bert): BertModel(
@@ -333,7 +333,7 @@
     )
   )
   (criterion): CrossEntropyLoss()
-), 'trained_epoch': -1, 'test_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x000001A57D35A108>, 'optimizer': Adam (
+), 'trained_epoch': -1, 'test_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x00000220F9F4BE08>, 'optimizer': Adam (
 Parameter Group 0
     amsgrad: False
     betas: (0.9, 0.999)
@@ -345,12 +345,14 @@ Parameter Group 0
     lr: 1e-05
     maximize: False
     weight_decay: 0
-), 'scheduler': <torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x000001A57EC115C8>, 'train_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x000001A564793388>, 'validation_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x000001A57E936888>}
-2023-07-29 04:25:43,457 - utils - INFO - 
+), 'scheduler': <torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x000002209CDE4588>, 'train_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x000002209CDE5508>, 'validation_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x00000220F9F7CD48>}
+2023-07-29 15:14:43,329 - initialize - INFO - Details of all configs: 
+{'version': 'pre-test-1', 'logging_time': 1, 'drive_path': '/content/drive', 'AGNews_path': '.', 'epoch': 2, 'batch_size': 8, 'model_name': 'BertWithNN', 'hidden_size': 768, 'class_number': 4, 'nn_layer_number': 3, 'n_factor': 0.5, 'freeze_lm': False, 'load_checkpoint': False, 'checkpoint_epoch': -1, 'optimizer_name': 'Adam', 'optimizer_lr': 1e-05, 'scheduler_name': 'ReduceLROnPlateau', 'scheduler_mode': 'min', 'scheduler_factor': 0.1, 'scheduler_patience': 2, 'scheduler_verbose': True, 'max_sequence_len': 512, 'formatter_name': 'AGNewsFormatter', 'dataset_name': 'AGNewsDataset', 'dataloader_shuffle': True}
+2023-07-29 15:14:55,187 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+-------+
 | epoch | stage | iterations |       time       |   loss    |  lr   |
 +-------+-------+------------+------------------+-----------+-------+
-|   0   | train |    1/3     | 0:00:09\ 0:00:18 | 1.4601283 | 1e-05 |
+|   0   | train |    1/3     | 0:00:11/ 0:00:23 | 1.4601283 | 1e-05 |
 +-------+-------+------------+------------------+-----------+-------+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -358,11 +360,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:25:53,359 - utils - INFO - 
+2023-07-29 15:15:05,683 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+-------+
 | epoch | stage | iterations |       time       |   loss    |  lr   |
 +-------+-------+------------+------------------+-----------+-------+
-|   0   | train |    2/3     | 0:00:19\ 0:00:09 | 1.4344092 | 1e-05 |
+|   0   | train |    2/3     | 0:00:22/ 0:00:11 | 1.4344092 | 1e-05 |
 +-------+-------+------------+------------------+-----------+-------+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -370,11 +372,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:25:56,365 - utils - INFO - 
+2023-07-29 15:15:08,792 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+-------+
 | epoch | stage | iterations |       time       |   loss    |  lr   |
 +-------+-------+------------+------------------+-----------+-------+
-|   0   | train |    3/3     | 0:00:22\ 0:00:00 | 1.4183709 | 1e-05 |
+|   0   | train |    3/3     | 0:00:25/ 0:00:00 | 1.4183709 | 1e-05 |
 +-------+-------+------------+------------------+-----------+-------+
 +-----+-----+-----+------+-----+-----+-----+-------+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF |  MaE  |
@@ -382,11 +384,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.486 |
 +-----+-----+-----+------+-----+-----+-----+-------+
 
-2023-07-29 04:25:56,368 - utils - INFO - 
+2023-07-29 15:15:08,796 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+-------+
 | epoch | stage | iterations |       time       |   loss    |  lr   |
 +-------+-------+------------+------------------+-----------+-------+
-|   0   | train |    3/3     | 0:00:22\ 0:00:00 | 0.1772964 | 1e-05 |
+|   0   | train |    3/3     | 0:00:25/ 0:00:00 | 0.1772964 | 1e-05 |
 +-------+-------+------------+------------------+-----------+-------+
 +-----+-----+-----+------+-----+-----+-----+-------+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF |  MaE  |
@@ -394,11 +396,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.486 |
 +-----+-----+-----+------+-----+-----+-----+-------+
 
-2023-07-29 04:26:00,623 - utils - INFO - 
+2023-07-29 15:15:13,288 - utils - INFO - 
 +-------+----------+------------+------------------+-----------+----+
 | epoch |  stage   | iterations |       time       |   loss    | lr |
 +-------+----------+------------+------------------+-----------+----+
-|   0   | validate |    1/3     | 0:00:04\ 0:00:08 | 1.3877356 |    |
+|   0   | validate |    1/3     | 0:00:04/ 0:00:08 | 1.3877356 |    |
 +-------+----------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -406,11 +408,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:04,766 - utils - INFO - 
+2023-07-29 15:15:17,742 - utils - INFO - 
 +-------+----------+------------+------------------+-----------+----+
 | epoch |  stage   | iterations |       time       |   loss    | lr |
 +-------+----------+------------+------------------+-----------+----+
-|   0   | validate |    2/3     | 0:00:08\ 0:00:04 | 1.3879139 |    |
+|   0   | validate |    2/3     | 0:00:08/ 0:00:04 | 1.3879139 |    |
 +-------+----------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -418,23 +420,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:05,874 - utils - INFO - 
-+-------+----------+------------+------------------+-----------+----+
-| epoch |  stage   | iterations |       time       |   loss    | lr |
-+-------+----------+------------+------------------+-----------+----+
-|   0   | validate |    3/3     | 0:00:09\ 0:00:00 | 1.3874846 |    |
-+-------+----------+------------+------------------+-----------+----+
-+-----+-----+-----+------+-----+-----+-----+-----+
-| MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
-+-----+-----+-----+------+-----+-----+-----+-----+
-| 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
-+-----+-----+-----+------+-----+-----+-----+-----+
-
-2023-07-29 04:26:05,877 - utils - INFO - 
+2023-07-29 15:15:18,940 - utils - INFO - 
 +-------+----------+------------+------------------+-----------+----+
 | epoch |  stage   | iterations |       time       |   loss    | lr |
 +-------+----------+------------+------------------+-----------+----+
-|   0   | validate |    3/3     | 0:00:09\ 0:00:00 | 0.1734356 |    |
+|   0   | validate |    3/3     | 0:00:10/ 0:00:00 | 1.3874846 |    |
 +-------+----------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -442,11 +432,23 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:12,461 - utils - INFO - 
+2023-07-29 15:15:18,947 - utils - INFO - 
++-------+----------+------------+------------------+-----------+----+
+| epoch |  stage   | iterations |       time       |   loss    | lr |
++-------+----------+------------+------------------+-----------+----+
+|   0   | validate |    3/3     | 0:00:10/ 0:00:00 | 0.1734356 |    |
++-------+----------+------------+------------------+-----------+----+
++-----+-----+-----+------+-----+-----+-----+-----+
+| MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
++-----+-----+-----+------+-----+-----+-----+-----+
+| 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
++-----+-----+-----+------+-----+-----+-----+-----+
+
+2023-07-29 15:15:27,113 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   0   | test  |    1/3     | 0:00:04\ 0:00:09 | 1.3878288 |    |
+|   0   | test  |    1/3     | 0:00:04/ 0:00:09 | 1.3878288 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -454,11 +456,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:16,828 - utils - INFO - 
+2023-07-29 15:15:31,982 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   0   | test  |    2/3     | 0:00:08\ 0:00:04 | 1.3879554 |    |
+|   0   | test  |    2/3     | 0:00:09/ 0:00:04 | 1.3879554 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -466,11 +468,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:17,936 - utils - INFO - 
+2023-07-29 15:15:33,073 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   0   | test  |    3/3     | 0:00:10\ 0:00:00 | 1.3874017 |    |
+|   0   | test  |    3/3     | 0:00:10/ 0:00:00 | 1.3874017 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -478,11 +480,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:17,939 - utils - INFO - 
+2023-07-29 15:15:33,079 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   0   | test  |    3/3     | 0:00:10\ 0:00:00 | 0.1734252 |    |
+|   0   | test  |    3/3     | 0:00:10/ 0:00:00 | 0.1734252 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -490,11 +492,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:28,244 - utils - INFO - 
+2023-07-29 15:15:43,966 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+-------+
 | epoch | stage | iterations |       time       |   loss    |  lr   |
 +-------+-------+------------+------------------+-----------+-------+
-|   1   | train |    1/3     | 0:00:10\ 0:00:20 | 1.3881278 | 1e-05 |
+|   1   | train |    1/3     | 0:00:10/ 0:00:21 | 1.3881278 | 1e-05 |
 +-------+-------+------------+------------------+-----------+-------+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -502,11 +504,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:38,634 - utils - INFO - 
+2023-07-29 15:15:55,006 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+-------+
 | epoch | stage | iterations |       time       |   loss    |  lr   |
 +-------+-------+------------+------------------+-----------+-------+
-|   1   | train |    2/3     | 0:00:20\ 0:00:10 | 1.3872111 | 1e-05 |
+|   1   | train |    2/3     | 0:00:21/ 0:00:10 | 1.3872111 | 1e-05 |
 +-------+-------+------------+------------------+-----------+-------+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -514,11 +516,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:41,650 - utils - INFO - 
+2023-07-29 15:15:58,081 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+-------+
 | epoch | stage | iterations |       time       |   loss    |  lr   |
 +-------+-------+------------+------------------+-----------+-------+
-|   1   | train |    3/3     | 0:00:23\ 0:00:00 | 1.3869055 | 1e-05 |
+|   1   | train |    3/3     | 0:00:24/ 0:00:00 | 1.3869055 | 1e-05 |
 +-------+-------+------------+------------------+-----------+-------+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -526,11 +528,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:41,653 - utils - INFO - 
+2023-07-29 15:15:58,084 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+-------+
 | epoch | stage | iterations |       time       |   loss    |  lr   |
 +-------+-------+------------+------------------+-----------+-------+
-|   1   | train |    3/3     | 0:00:23\ 0:00:00 | 0.1733632 | 1e-05 |
+|   1   | train |    3/3     | 0:00:24/ 0:00:00 | 0.1733632 | 1e-05 |
 +-------+-------+------------+------------------+-----------+-------+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -538,11 +540,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.5 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:45,910 - utils - INFO - 
+2023-07-29 15:16:02,337 - utils - INFO - 
 +-------+----------+------------+------------------+-----------+----+
 | epoch |  stage   | iterations |       time       |   loss    | lr |
 +-------+----------+------------+------------------+-----------+----+
-|   1   | validate |    1/3     | 0:00:04\ 0:00:08 | 1.3862944 |    |
+|   1   | validate |    1/3     | 0:00:04/ 0:00:08 | 1.3862944 |    |
 +-------+----------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -550,11 +552,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:50,068 - utils - INFO - 
+2023-07-29 15:16:06,447 - utils - INFO - 
 +-------+----------+------------+------------------+-----------+----+
 | epoch |  stage   | iterations |       time       |   loss    | lr |
 +-------+----------+------------+------------------+-----------+----+
-|   1   | validate |    2/3     | 0:00:08\ 0:00:04 | 1.3862944 |    |
+|   1   | validate |    2/3     | 0:00:08/ 0:00:04 | 1.3862944 |    |
 +-------+----------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -562,23 +564,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:51,168 - utils - INFO - 
-+-------+----------+------------+------------------+-----------+----+
-| epoch |  stage   | iterations |       time       |   loss    | lr |
-+-------+----------+------------+------------------+-----------+----+
-|   1   | validate |    3/3     | 0:00:09\ 0:00:00 | 1.3862944 |    |
-+-------+----------+------------+------------------+-----------+----+
-+-----+-----+-----+------+-----+-----+-----+-----+
-| MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
-+-----+-----+-----+------+-----+-----+-----+-----+
-| 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
-+-----+-----+-----+------+-----+-----+-----+-----+
-
-2023-07-29 04:26:51,170 - utils - INFO - 
+2023-07-29 15:16:07,489 - utils - INFO - 
 +-------+----------+------------+------------------+-----------+----+
 | epoch |  stage   | iterations |       time       |   loss    | lr |
 +-------+----------+------------+------------------+-----------+----+
-|   1   | validate |    3/3     | 0:00:09\ 0:00:00 | 0.1732868 |    |
+|   1   | validate |    3/3     | 0:00:09/ 0:00:00 | 1.3862944 |    |
 +-------+----------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -586,11 +576,23 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:26:57,634 - utils - INFO - 
+2023-07-29 15:16:07,493 - utils - INFO - 
++-------+----------+------------+------------------+-----------+----+
+| epoch |  stage   | iterations |       time       |   loss    | lr |
++-------+----------+------------+------------------+-----------+----+
+|   1   | validate |    3/3     | 0:00:09/ 0:00:00 | 0.1732868 |    |
++-------+----------+------------+------------------+-----------+----+
++-----+-----+-----+------+-----+-----+-----+-----+
+| MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
++-----+-----+-----+------+-----+-----+-----+-----+
+| 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
++-----+-----+-----+------+-----+-----+-----+-----+
+
+2023-07-29 15:16:14,082 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   1   | test  |    1/3     | 0:00:04\ 0:00:09 | 1.3862944 |    |
+|   1   | test  |    1/3     | 0:00:04/ 0:00:08 | 1.3862944 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -598,11 +600,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:27:02,016 - utils - INFO - 
+2023-07-29 15:16:18,461 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   1   | test  |    2/3     | 0:00:08\ 0:00:04 | 1.3862944 |    |
+|   1   | test  |    2/3     | 0:00:08/ 0:00:04 | 1.3862944 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -610,11 +612,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:27:03,112 - utils - INFO - 
+2023-07-29 15:16:19,513 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   1   | test  |    3/3     | 0:00:10\ 0:00:00 | 1.3862944 |    |
+|   1   | test  |    3/3     | 0:00:09/ 0:00:00 | 1.3862944 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -622,11 +624,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:27:03,115 - utils - INFO - 
+2023-07-29 15:16:19,516 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   1   | test  |    3/3     | 0:00:10\ 0:00:00 | 0.1732868 |    |
+|   1   | test  |    3/3     | 0:00:09/ 0:00:00 | 0.1732868 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -634,25 +636,25 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:27:32,622 - initialize - INFO - Initializing seed to 48763 successfully.
-2023-07-29 04:27:33,448 - initialize - INFO - Initializing device to cuda successfully.
-2023-07-29 04:27:33,471 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
-2023-07-29 04:27:34,574 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
-2023-07-29 04:27:36,326 - initialize - INFO - Initializing model to BertWithNN successfully.
-2023-07-29 04:27:36,938 - initialize - INFO - Initializing optimizer to Adam successfully.
-2023-07-29 04:27:36,938 - initialize - INFO - Initializing scheduler to ReduceLROnPlateau successfully.
-2023-07-29 04:27:37,589 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
-2023-07-29 04:27:37,638 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
-2023-07-29 04:27:37,639 - initialize - INFO - Initializing train dataloader successfully.
-2023-07-29 04:27:38,290 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
-2023-07-29 04:27:38,334 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
-2023-07-29 04:27:38,334 - initialize - INFO - Initializing validation dataloader successfully.
-2023-07-29 04:27:41,465 - initialize - INFO - Load checkpoint from checkpoint path successfully.
-2023-07-29 04:27:41,780 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
-2023-07-29 04:27:41,831 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
-2023-07-29 04:27:41,832 - initialize - INFO - Initializing test dataloader successfully.
-2023-07-29 04:27:41,833 - initialize - INFO - Initialize all parameters successfully.
-2023-07-29 04:27:41,838 - initialize - INFO - Details of all parameters: 
+2023-07-29 15:18:51,043 - initialize - INFO - Initializing seed to 48763 successfully.
+2023-07-29 15:18:51,884 - initialize - INFO - Initializing device to cuda successfully.
+2023-07-29 15:18:51,899 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2023-07-29 15:18:53,094 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-07-29 15:18:55,796 - initialize - INFO - Initializing model to BertWithNN successfully.
+2023-07-29 15:18:56,646 - initialize - INFO - Initializing optimizer to Adam successfully.
+2023-07-29 15:18:56,647 - initialize - INFO - Initializing scheduler to ReduceLROnPlateau successfully.
+2023-07-29 15:18:57,111 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 15:18:57,226 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 15:18:57,229 - initialize - INFO - Initializing train dataloader successfully.
+2023-07-29 15:18:57,579 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 15:18:57,686 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 15:18:57,686 - initialize - INFO - Initializing validation dataloader successfully.
+2023-07-29 15:19:02,726 - initialize - INFO - Load checkpoint from checkpoint path successfully.
+2023-07-29 15:19:03,033 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-07-29 15:19:03,085 - initialize - INFO - Initializing formatter to AGNewsFormatter successfully.
+2023-07-29 15:19:03,085 - initialize - INFO - Initializing test dataloader successfully.
+2023-07-29 15:19:03,086 - initialize - INFO - Initialize all parameters successfully.
+2023-07-29 15:19:03,090 - initialize - INFO - Details of all parameters: 
 {'device': device(type='cuda'), 'model': BertWithNN(
   (lm): Bert(
     (bert): BertModel(
@@ -970,7 +972,7 @@ Parameter Group 0
     )
   )
   (criterion): CrossEntropyLoss()
-), 'trained_epoch': 1, 'test_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x0000021A12C6DE48>, 'optimizer': Adam (
+), 'trained_epoch': 1, 'test_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x0000024DB410BFC8>, 'optimizer': Adam (
 Parameter Group 0
     amsgrad: False
     betas: (0.9, 0.999)
@@ -982,12 +984,14 @@ Parameter Group 0
     lr: 1e-05
     maximize: False
     weight_decay: 0
-), 'scheduler': <torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x0000021A2FAE3BC8>, 'train_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x0000021A4CB07408>, 'validation_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x0000021A4CAEBFC8>}
-2023-07-29 04:27:43,507 - utils - INFO - 
+), 'scheduler': <torch.optim.lr_scheduler.ReduceLROnPlateau object at 0x0000024DD1175288>, 'train_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x0000024DD118B3C8>, 'validation_dataloader': <torch.utils.data.dataloader.DataLoader object at 0x0000024DB28183C8>}
+2023-07-29 15:19:03,139 - initialize - INFO - Details of all configs: 
+{'version': 'pre-test-1', 'logging_time': 1, 'drive_path': '/content/drive', 'AGNews_path': '.', 'epoch': 2, 'batch_size': 8, 'model_name': 'BertWithNN', 'hidden_size': 768, 'class_number': 4, 'nn_layer_number': 3, 'n_factor': 0.5, 'freeze_lm': False, 'load_checkpoint': True, 'checkpoint_epoch': 1, 'optimizer_name': 'Adam', 'optimizer_lr': 1e-05, 'scheduler_name': 'ReduceLROnPlateau', 'scheduler_mode': 'min', 'scheduler_factor': 0.1, 'scheduler_patience': 2, 'scheduler_verbose': True, 'max_sequence_len': 512, 'formatter_name': 'AGNewsFormatter', 'dataset_name': 'AGNewsDataset', 'dataloader_shuffle': True}
+2023-07-29 15:19:04,798 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   1   | test  |    1/3     | 0:00:01\ 0:00:03 | 1.3862944 |    |
+|   1   | test  |    1/3     | 0:00:01/ 0:00:03 | 1.3862944 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -995,11 +999,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:27:44,299 - utils - INFO - 
+2023-07-29 15:19:05,595 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   1   | test  |    2/3     | 0:00:02\ 0:00:01 | 1.3862944 |    |
+|   1   | test  |    2/3     | 0:00:02/ 0:00:01 | 1.3862944 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -1007,11 +1011,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:27:44,496 - utils - INFO - 
+2023-07-29 15:19:05,794 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   1   | test  |    3/3     | 0:00:02\ 0:00:00 | 1.3862944 |    |
+|   1   | test  |    3/3     | 0:00:02/ 0:00:00 | 1.3862944 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |
@@ -1019,11 +1023,11 @@ Parameter Group 0
 | 0.0 | 0.0 | 0.0 | 0.75 | 0.0 | 0.0 | 0.0 | 0.0 |
 +-----+-----+-----+------+-----+-----+-----+-----+
 
-2023-07-29 04:27:44,499 - utils - INFO - 
+2023-07-29 15:19:05,797 - utils - INFO - 
 +-------+-------+------------+------------------+-----------+----+
 | epoch | stage | iterations |       time       |   loss    | lr |
 +-------+-------+------------+------------------+-----------+----+
-|   1   | test  |    3/3     | 0:00:02\ 0:00:00 | 0.1732868 |    |
+|   1   | test  |    3/3     | 0:00:02/ 0:00:00 | 0.1732868 |    |
 +-------+-------+------------+------------------+-----------+----+
 +-----+-----+-----+------+-----+-----+-----+-----+
 | MiP | MiR | MiF | MiE  | MaP | MaR | MaF | MaE |

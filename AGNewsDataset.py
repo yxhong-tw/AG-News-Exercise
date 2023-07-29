@@ -4,13 +4,13 @@ from torch.utils.data import Dataset
 
 
 class AGNewsDataset(Dataset):
-    def __init__(self, config, task_name):
+    def __init__(self, configs, task_name):
         super().__init__()
 
         self.data = []
 
         data_df = pd.read_csv(
-            filepath_or_buffer=f'{config["AGNews_path"]}/data/{task_name}.csv'
+            filepath_or_buffer=f'{configs["AGNews_path"]}/data/{task_name}.csv'
             , encoding='UTF-8')
 
         for i in range(data_df.shape[0]):

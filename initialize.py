@@ -36,12 +36,12 @@ def initialize_device(device_type='cuda'):
     return torch.device(device_type)
 
 
-def initialize_model(config, device):
-    model_name = config['model_name']
+def initialize_model(configs, device):
+    model_name = configs['model_name']
     model = None
 
     if model_name == 'BertWithNN':
-        model = BertWithNN(config=config)
+        model = BertWithNN(configs=configs, device=device)
     else:
         logger.error(f'There is no model named {model_name}.')
         raise ValueError(f'There is no model named {model_name}.')
@@ -51,12 +51,12 @@ def initialize_model(config, device):
     return model.to(device)
 
 
-def initialize_optimizer(config, model):
-    optimizer_name = config['optimizer_name']
+def initialize_optimizer(configs, model):
+    optimizer_name = configs['optimizer_name']
     optimizer = None
 
     if optimizer_name == 'Adam':
-        optimizer = Adam(params=model.parameters(), lr=config['optimizer_lr'])
+        optimizer = Adam(params=model.parameters(), lr=configs['optimizer_lr'])
     else:
         logger.error(f'There is no optimizer named {optimizer_name}.')
         raise ValueError(f'There is no optimizer named {optimizer_name}.')
@@ -66,17 +66,17 @@ def initialize_optimizer(config, model):
     return optimizer
 
 
-def initialize_scheduler(config, optimizer):
-    scheduler_name = config['scheduler_name']
+def initialize_scheduler(configs, optimizer):
+    scheduler_name = configs['scheduler_name']
     scheduler = None
 
     if scheduler_name == 'ReduceLROnPlateau':
         scheduler = ReduceLROnPlateau(
             optimizer=optimizer
-            , mode=config['scheduler_mode']
-            , factor=config['scheduler_factor']
-            , patience=config['scheduler_patience']
-            , verbose=config['scheduler_verbose']
+            , mode=configs['scheduler_mode']
+            , factor=configs['scheduler_factor']
+            , patience=configs['scheduler_patience']
+            , verbose=configs['scheduler_verbose']
         )
     else:
         logger.error(f'There is no scheduler named {scheduler_name}.')
@@ -87,12 +87,12 @@ def initialize_scheduler(config, optimizer):
     return scheduler
 
 
-def initialize_formatter(config):
-    formatter_name = config['formatter_name']
+def initialize_formatter(configs):
+    formatter_name = configs['formatter_name']
     formatter = None
 
     if formatter_name == 'AGNewsFormatter':
-        formatter = AGNewsFormatter(config=config)
+        formatter = AGNewsFormatter(configs=configs)
     else:
         logger.error(f'There is no formatter named {formatter_name}.')
         raise ValueError(f'There is no formatter named {formatter_name}.')
@@ -105,15 +105,15 @@ def initialize_formatter(config):
     return collate_fn
 
 
-def initialize_dataloader(config, task_name):
-    dataset_name = config['dataset_name']
+def initialize_dataloader(configs, task_name):
+    dataset_name = configs['dataset_name']
     dataloader = None
 
     if dataset_name == 'AGNewsDataset':
-        dataset = AGNewsDataset(config=config, task_name=task_name)
-        batch_size = config['batch_size']
-        shuffle = config['dataloader_shuffle']
-        collate_fn = initialize_formatter(config=config)
+        dataset = AGNewsDataset(configs=configs, task_name=task_name)
+        batch_size = configs['batch_size']
+        shuffle = configs['dataloader_shuffle']
+        collate_fn = initialize_formatter(configs=configs)
         dataloader = DataLoader(
             dataset=dataset
             , batch_size=batch_size
@@ -129,9 +129,9 @@ def initialize_dataloader(config, task_name):
     return dataloader
 
 
-def load_checkpoint(config, model, optimizer, scheduler, trained_epoch):
-    directory_path=f'{config["AGNews_path"]}/checkpoints/{config["version"]}'
-    file_name=f'{config["checkpoint_epoch"]}.pkl'
+def load_checkpoint(configs, model, optimizer, scheduler, trained_epoch):
+    directory_path=f'{configs["AGNews_path"]}/checkpoints/{configs["version"]}'
+    file_name=f'{configs["checkpoint_epoch"]}.pkl'
 
     try:
         checkpoint_parameters = torch.load(f=f'{directory_path}/{file_name}')
@@ -149,11 +149,11 @@ def load_checkpoint(config, model, optimizer, scheduler, trained_epoch):
     return (model, optimizer, scheduler, trained_epoch)
 
 
-def initialize(config, mode):
+def initialize(configs, mode):
     initialize_seeds()
 
     device = initialize_device()
-    model = initialize_model(config=config, device=device)
+    model = initialize_model(configs=configs, device=device)
     trained_epoch = -1
 
     parameters = {
@@ -161,25 +161,25 @@ def initialize(config, mode):
     }
 
     if mode == 'train':
-        optimizer = initialize_optimizer(config=config, model=model)
-        scheduler = initialize_scheduler(config=config, optimizer=optimizer)
+        optimizer = initialize_optimizer(configs=configs, model=model)
+        scheduler = initialize_scheduler(configs=configs, optimizer=optimizer)
 
         train_dataloader = initialize_dataloader(
-            config=config
+            configs=configs
             , task_name='train')
         validation_dataloader = initialize_dataloader(
-            config=config
+            configs=configs
             , task_name='validation')
 
-    if config['load_checkpoint'] == True:
+    if configs['load_checkpoint'] == True:
         model, optimizer, scheduler, trained_epoch = load_checkpoint(
-            config=config
+            configs=configs
             , model=model
             , optimizer=optimizer
             , scheduler=scheduler
             , trained_epoch=trained_epoch)
 
-    test_dataloader = initialize_dataloader(config=config, task_name='test')
+    test_dataloader = initialize_dataloader(configs=configs, task_name='test')
 
     parameters['model'] = model
     parameters['trained_epoch'] = trained_epoch
@@ -193,5 +193,6 @@ def initialize(config, mode):
 
     logger.info('Initialize all parameters successfully.')
     logger.info(f'Details of all parameters: \n{parameters}')
+    logger.info(f'Details of all configs: \n{configs}')
 
     return parameters
