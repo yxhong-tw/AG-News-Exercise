@@ -1,17 +1,16 @@
 import torch.nn as nn
 
-from model.BertWithNN.Bert import Bert
-from model.BertWithNN.SingleClassifier import Classifier
-# from model.BertWithNN.MultiClassifiers import Classifier
+from model.Bert import Bert
+from model.BertWithSingleNN.SingleClassifier import SingleClassifier
 from evaluation import get_comfusion_matrix
 
 
-class BertWithNN(nn.Module):
+class BertWithSingleNN(nn.Module):
     def __init__(self, configs, device):
         super().__init__()
 
         self.lm = Bert()
-        self.classifier = Classifier(configs=configs, device=device)
+        self.classifier = SingleClassifier(configs=configs, device=device)
         self.criterion = nn.CrossEntropyLoss()
 
 

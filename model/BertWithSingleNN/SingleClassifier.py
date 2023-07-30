@@ -1,7 +1,7 @@
 import torch.nn as nn
 
 
-class Classifier(nn.Module):
+class SingleClassifier(nn.Module):
     def __init__(self, configs, device):
         super().__init__()
 

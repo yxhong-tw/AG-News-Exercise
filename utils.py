@@ -39,7 +39,7 @@ def get_time_info_str(total_seconds):
     minutes = (total_seconds // 60 % 60)
     seconds = (total_seconds % 60)
 
-    return ('%2d:%02d:%02d' % (hours, minutes, seconds))
+    return ('%d:%02d:%02d' % (hours, minutes, seconds))
 
 
 def log(

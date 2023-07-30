@@ -2,12 +2,14 @@ import logging
 import numpy as np
 import random
 import torch
+import json
 
 from torch.optim import Adam
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.utils.data import DataLoader
 
-from model.BertWithNN.BertWithNN import BertWithNN
+from model.BertWithSingleNN.BertWithSingleNN import BertWithSingleNN
+from model.BertWithMultiNNs.BertWithMultiNNs import BertWithMultiNNs
 from AGNewsFormatter import AGNewsFormatter
 from AGNewsDataset import AGNewsDataset
 
@@ -40,8 +42,10 @@ def initialize_model(configs, device):
     model_name = configs['model_name']
     model = None
 
-    if model_name == 'BertWithNN':
-        model = BertWithNN(configs=configs, device=device)
+    if model_name == 'BertWithSingleNN':
+        model = BertWithSingleNN(configs=configs, device=device)
+    elif model_name == 'BertWithMultiNNs':
+        model = BertWithMultiNNs(configs=configs, device=device)
     else:
         logger.error(f'There is no model named {model_name}.')
         raise ValueError(f'There is no model named {model_name}.')
@@ -193,6 +197,8 @@ def initialize(configs, mode):
 
     logger.info('Initialize all parameters successfully.')
     logger.info(f'Details of all parameters: \n{parameters}')
-    logger.info(f'Details of all configs: \n{configs}')
+
+    configs_str = json.dumps(obj=configs, indent=4)
+    logger.info(f'Details of all configs: \n{configs_str}')
 
     return parameters

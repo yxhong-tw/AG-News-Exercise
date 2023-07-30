@@ -76,7 +76,7 @@ def do_train(configs, parameters):
                     , other=mima_prf
                 )
 
-        temp_epoch_loss = float(epoch_loss / train_dataloader_len / batch_size)
+        temp_epoch_loss = float(epoch_loss / train_dataloader_len)
         delta_time = (timer() - start_time)
         dtime_str = get_time_info_str(delta_time)
         rtime_str = get_time_info_str(0)

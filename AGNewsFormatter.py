@@ -7,6 +7,7 @@ class AGNewsFormatter:
     def __init__(self, configs):
         self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
         self.max_sequence_len = configs['max_sequence_len']
+        self.model_name = configs['model_name']
 
 
     def format(self, data):
@@ -23,8 +24,19 @@ class AGNewsFormatter:
 
             texts.append(text_ids)
 
-            label = [0, 0, 0, 0]
-            label[one_data['label']-1] = 1
+            label = None
+
+            if self.model_name == 'BertWithSingleNN':
+                label = [0, 0, 0, 0]
+                label[one_data['label']-1] = 1
+            elif self.model_name == 'BertWithMultiNNs':
+                label = []
+
+                for idx in range(4):
+                    if idx == (one_data['label'] - 1):
+                        label.append([0, 1])
+                    else:
+                        label.append([1, 0])
 
             labels.append(label)
 
