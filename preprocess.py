@@ -4,65 +4,68 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-    train_test_split()
+    train_df = pd.read_csv(filepath_or_buffer='data/origin/train.csv')
+    test_df = pd.read_csv(filepath_or_buffer='data/origin/test.csv')
 
-    # print(train_df.shape)
-    # input()
+    analyze_dataset(df=train_df, df_name='train')
+    analyze_dataset(df=test_df, df_name='test')
 
-    # test_df = pd.read_csv(filepath_or_buffer='data/test.csv')
-
-    # train_title_max_num = float('-inf')
-    # train_title_min_num = float('inf')
-    # train_description_max_num = float('-inf')
-    # train_description_min_num = float('inf')
-    # train_title_over512_data_num = 0
-    # train_description_over512_data_num = 0
-
-    # for i in range(train_df.shape[0]):
-    #     title = train_df['Title'].iloc[i]
-    #     description = train_df['Description'].iloc[i]
-
-    #     title_char_num = len(title.split(' '))
-    #     description_char_num = len(description.split(' '))
-
-    #     if title_char_num > 512:
-    #         train_title_over512_data_num += 1
-
-    #     if title_char_num > train_title_max_num:
-    #         train_title_max_num = title_char_num
-
-    #     if title_char_num < train_title_min_num:
-    #         train_title_min_num = title_char_num
-
-    #     if description_char_num > 512:
-    #         train_description_over512_data_num += 1
-
-    #     if description_char_num > train_description_max_num:
-    #         train_description_max_num = description_char_num
-
-    #     if description_char_num < train_description_min_num:
-    #         train_description_min_num = description_char_num
-
-    # print(train_title_max_num, train_title_min_num, train_title_over512_data_num)
-    # print(train_description_max_num, train_description_min_num, train_description_over512_data_num)
-    # print(train_df.shape[0])
+    # train_validation_split(df=train_df)
 
 
+def analyze_dataset(df, df_name):
+    def simple_check(char_num, over_512_data_num, max_num, min_num):
+        if char_num > 512:
+            over_512_data_num += 1
 
-    # print(test_df.shape[0])
+        if char_num > max_num:
+            max_num = char_num
 
-    # input()
+        if char_num < min_num:
+            min_num = char_num
 
-    # test_description_max_num = float('-inf')
-    # test_description_min_num = float('inf')
+        return over_512_data_num, max_num, min_num
+
+    title_over_512_data_num = 0
+    title_max_num = float('-inf')
+    title_min_num = float('inf')
+    desc_over_512_data_num = 0
+    desc_max_num = float('-inf')
+    desc_min_num = float('inf')
+
+    for i in range(df.shape[0]):
+        title = df['Title'].iloc[i]
+        desc = df['Description'].iloc[i]
+
+        title_char_num = len(title.split(' '))
+        desc_char_num = len(desc.split(' '))
+
+        title_over_512_data_num, title_max_num, title_min_num = simple_check(
+            char_num=title_char_num
+            , over_512_data_num=title_over_512_data_num
+            , max_num=title_max_num
+            , min_num=title_min_num
+        )
+
+        desc_over_512_data_num, desc_max_num, desc_min_num = simple_check(
+            char_num=desc_char_num
+            , over_512_data_num=desc_over_512_data_num
+            , max_num=desc_max_num
+            , min_num=desc_min_num
+        )
+
+    print(f'Shape of {df_name}_df: {df.shape}')
+    print(f'title_over_512_data_num of {df_name}_df: {title_over_512_data_num}')
+    print(f'title_max_num of {df_name}_df: {title_max_num}')
+    print(f'title_min_num of {df_name}_df: {title_min_num}')
+    print(f'desc_over_512_data_num of {df_name}_df: {desc_over_512_data_num}')
+    print(f'desc_max_num of {df_name}_df: {desc_max_num}')
+    print(f'desc_min_num of {df_name}_df: {desc_min_num}')
+    print()
 
 
-def train_validation_split():
-    train_df = pd.read_csv(
-        filepath_or_buffer='data/origin/train.csv'
-        , encoding='UTF-8')
-
-    train_df, validation_df = train_test_split(train_df, test_size=0.1)
+def train_validation_split(df):
+    train_df, validation_df = train_test_split(df, test_size=0.1)
 
     train_df.to_csv(
         path_or_buf='data/train.csv'
