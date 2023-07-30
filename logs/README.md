@@ -11,8 +11,7 @@
     - Testing all `initialize`, `do_train`, `do_test` and `load_checkpoint` functions
 
 - pre-test-2
-    - Test whether the whole code (train, validate, test, and load_checkpoint) execute normally with `BertWithMultiNNs` model in commit TODO.
+    - Test whether the whole code (train, validate, test, and load_checkpoint) execute normally with `BertWithMultiNNs` model in commit fc5549.
 
 - pre-test-3
-    - Test whether the whole code (train, validate, test, and load_checkpoint) execute normally with `BertWithMultiNNs` model in commit TODO.
-  
+    - Test whether the whole code (train, validate, test, and load_checkpoint) execute normally with `BertWithMultiNNs` model in commit fc5549.
