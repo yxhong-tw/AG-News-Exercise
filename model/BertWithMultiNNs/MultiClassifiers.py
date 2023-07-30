@@ -6,10 +6,10 @@ class MultiClassifier(nn.Module):
     def __init__(self, configs, device):
         super().__init__()
 
-        nn_layer_number = configs['nn_layer_number']
         hidden_size = configs['hidden_size']
-        n_factor = configs['n_factor']
         class_number = configs['class_number']
+        nn_layer_number = configs['nn_layer_number']
+        n_factor = configs['n_factor']
 
         self.device = device
         self.classifiers = []

@@ -1,17 +1,17 @@
+import json
 import logging
 import numpy as np
 import random
 import torch
-import json
 
 from torch.optim import Adam
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.utils.data import DataLoader
 
-from model.BertWithSingleNN.BertWithSingleNN import BertWithSingleNN
-from model.BertWithMultiNNs.BertWithMultiNNs import BertWithMultiNNs
-from AGNewsFormatter import AGNewsFormatter
 from AGNewsDataset import AGNewsDataset
+from AGNewsFormatter import AGNewsFormatter
+from model.BertWithMultiNNs.BertWithMultiNNs import BertWithMultiNNs
+from model.BertWithSingleNN.BertWithSingleNN import BertWithSingleNN
 
 
 logger = logging.getLogger(__name__)

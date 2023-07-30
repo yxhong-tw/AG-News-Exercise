@@ -28,6 +28,24 @@ def get_comfusion_matrix(preds, labels, cm):
     return cm
 
 
+def get_prfe(cm):
+    pre = 0.0
+    re = 0.0
+    f1 = 0.0
+    err = 0.0
+
+    if cm['tp'] != 0:
+        pre = float(cm['tp'] / (cm['tp'] + cm['fp']))
+        re = float(cm['tp'] / (cm['tp'] + cm['fn']))
+        f1 = float(2 * pre * re / (pre + re))
+
+    if cm['fp'] != 0 and cm['fn'] != 0:
+        err = float(
+            (cm['fp'] + cm['fn']) / (cm['tp'] + cm['fp'] + cm['tn'] + cm['fn']))
+
+    return pre, re, f1, err
+
+
 def get_mima_prfe(cm):
     precisions = []
     recalls = []
@@ -77,21 +95,3 @@ def get_mima_prfe(cm):
         , 'maf': round(macro_f1, 3)
         , 'mae': round(macro_err, 3)
     }
-
-
-def get_prfe(cm):
-    pre = 0.0
-    re = 0.0
-    f1 = 0.0
-    err = 0.0
-
-    if cm['tp'] != 0:
-        pre = float(cm['tp'] / (cm['tp'] + cm['fp']))
-        re = float(cm['tp'] / (cm['tp'] + cm['fn']))
-        f1 = float(2 * pre * re / (pre + re))
-
-    if cm['fp'] != 0 and cm['fn'] != 0:
-        err = float(
-            (cm['fp'] + cm['fn']) / (cm['tp'] + cm['fp'] + cm['tn'] + cm['fn']))
-
-    return pre, re, f1, err

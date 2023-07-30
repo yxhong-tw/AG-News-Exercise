@@ -1,13 +1,15 @@
+import gc
 import torch
 
-from torch.autograd import Variable
 from timeit import default_timer as timer
+from torch.autograd import Variable
 
-from utils import get_time_info_str, log
 from evaluation import get_mima_prfe
+from utils import get_time_info_str, log
 
 
 def do_test(configs, parameters, stage='test', epoch=None):
+    device = parameters['device']
     model = parameters['model']
     current_epoch = parameters['trained_epoch']
     dataloader = parameters['test_dataloader']
@@ -18,9 +20,6 @@ def do_test(configs, parameters, stage='test', epoch=None):
     if epoch != None:
         current_epoch = epoch
 
-    device = parameters['device']
-
-    batch_size = configs['batch_size']
     logging_time = configs['logging_time']
 
     dataloader_len = len(dataloader)
@@ -81,5 +80,8 @@ def do_test(configs, parameters, stage='test', epoch=None):
             , lr=None
             , other=mima_prf
         )
+
+        gc.collect()
+        torch.cuda.empty_cache()
 
         return total_loss

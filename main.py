@@ -1,10 +1,11 @@
-from utils import initialize_logger
-from initialize import initialize
-from do_train import do_train
 from do_test import do_test
+from do_train import do_train
+from initialize import initialize
+from utils import initialize_logger
 
 
 configs = {}
+
 
 # Basic related settings
 configs['version'] = 'pre-test-3'
@@ -16,6 +17,7 @@ configs['drive_path'] = '/content/drive'
 #     + '/Othercomputers/Pulsar-MSI/Workspace/NCKU/IKM_Lab/AG-News-Exercise'
 # )
 configs['AGNews_path'] = '.'
+
 
 # Training related settings
 configs['epoch'] = 2
@@ -46,9 +48,9 @@ configs['scheduler_patience'] = 2
 configs['scheduler_verbose'] = True
 
 ## Data related settings
-configs['max_sequence_len'] = 512
-configs['formatter_name'] = 'AGNewsFormatter'
 configs['dataset_name'] = 'AGNewsDataset'
+configs['formatter_name'] = 'AGNewsFormatter'
+configs['max_sequence_len'] = 512
 configs['dataloader_shuffle'] = True
 
 

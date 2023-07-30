@@ -1,8 +1,8 @@
 import torch.nn as nn
 
+from evaluation import get_comfusion_matrix
 from model.Bert import Bert
 from model.BertWithSingleNN.SingleClassifier import SingleClassifier
-from evaluation import get_comfusion_matrix
 
 
 class BertWithSingleNN(nn.Module):

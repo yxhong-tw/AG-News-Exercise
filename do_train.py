@@ -1,28 +1,27 @@
+import gc
 import os
+import torch
 
-from torch.autograd import Variable
 from timeit import default_timer as timer
+from torch.autograd import Variable
 
-from utils import get_time_info_str, log, save_checkpoint
-from evaluation import get_mima_prfe
 from do_test import do_test
+from evaluation import get_mima_prfe
+from utils import get_time_info_str, log, save_checkpoint
 
 
 def do_train(configs, parameters):
+    device = parameters['device']
     model = parameters['model']
+    trained_epoch = parameters['trained_epoch']
     optimizer = parameters['optimizer']
     scheduler = parameters['scheduler']
-    trained_epoch = parameters['trained_epoch']
     train_dataloader = parameters['train_dataloader']
-    validation_dataloader = parameters['validation_dataloader']
-    test_dataloader = parameters['test_dataloader']
-    device = parameters['device']
 
-    total_epoch = configs['epoch']
-    batch_size = configs['batch_size']
-    freeze_lm = configs['freeze_lm']
     logging_time = configs['logging_time']
     AGNews_path = configs['AGNews_path']
+    total_epoch = configs['epoch']
+    freeze_lm = configs['freeze_lm']
 
     train_dataloader_len = len(train_dataloader)
 
@@ -117,3 +116,6 @@ def do_train(configs, parameters):
             , stage='test'
             , epoch=current_epoch
         )
+
+        gc.collect()
+        torch.cuda.empty_cache()

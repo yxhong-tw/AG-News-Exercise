@@ -1,6 +1,6 @@
 import logging
-import torch
 import os
+import torch
 
 from tabulate import tabulate
 
