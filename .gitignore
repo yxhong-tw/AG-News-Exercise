@@ -1,4 +1,5 @@
-__pycache__
-venv
-unused_files
 *.pkl
+
+__pycache__
+unused_files
+venv
